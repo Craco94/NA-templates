@@ -10,6 +10,7 @@
 type * find_return_type(const std::vector<function> & overload_set, std::vector<type *> argument_types)
 
 {
+
     auto overload = std::find_if(overload_set.begin(), overload_set.end(), [&](auto && overload) {
         if (argument_types.size() != overload.arguments.size())
         {
