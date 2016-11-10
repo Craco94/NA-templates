@@ -28,13 +28,13 @@ private:
 	T _value;
 };
 
-template<>
-class container_wrapper<boost::optional<int>>
+template<typename T>
+class container_wrapper<boost::optional<T>>
 {
 public:
 	container_wrapper() = default;
 
-	container_wrapper(boost::optional<int> arg) : _value(std::move(arg)) 
+	container_wrapper(boost::optional<T> arg) : _value(std::move(arg)) 
 	{
 	}
 
@@ -49,5 +49,5 @@ public:
 	return _value ? 1 : 0;
 	}
 private:
-	boost::optional<int> _value;
+	boost::optional<T> _value;
 };
